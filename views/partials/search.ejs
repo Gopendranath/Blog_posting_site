@@ -1,8 +1,19 @@
-<div class="searchBar">
-    <div class="container">
-        <form action="/search" class="search__form" role="search" method="POST">
-            <input type="search" aria-label="Search" name="searchTerm" id="searchInput" placeholder="Search the site.."/>
-        </form>
-        <div id="searchClose"></div>
-    </div>
-</div>
+<div class="author">
+    <h1 class="author__heading">Search Results</h1>
+  </div>
+  
+  <section class="articles">
+  
+    <ul class="article-ul">
+      <% data.forEach(post => { %>
+        <li>
+          <a href="/post/<%= post._id %>">
+            <span><%= post.title %></span>
+            <span class="article-list__date"><%= post.createdAt.toDateString() %></span>
+          </a>
+        </li>
+      <% }) %>
+    </ul>
+  
+  
+  </section>
